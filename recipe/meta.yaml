@@ -1,5 +1,5 @@
 {% set name = "types-Jinja2" %}
-{% set version = "2.11.2" %}
+{% set version = "2.11.3" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/types-Jinja2-{{ version }}.tar.gz
-  sha256: 5b53d2b8bc6dd6dfbc0ae3e33e346fbe343cbeba1ed528858749e2a2ffe0e143
+  sha256: 8e8b0cf1e853f44db08e8f1eec610fd3f051c99d9bf6340fa47f1216604b2608
 
 build:
   number: 0
