@@ -7,23 +7,25 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/types-Jinja2-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/types-Jinja2-{{ version }}.tar.gz
   sha256: dbdc74a40aba7aed520b7e4d89e8f0fe4286518494208b35123bcf084d4b8c81
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - types-markupsafe
 
 test:
+  requires:
+    - python {{ python_min }}
   commands:
     - test -f $SP_DIR/jinja2-stubs/__init__.pyi
 
